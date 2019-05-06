@@ -1,4 +1,4 @@
-package com.br.uni.cobranca.principal;
+package principal;
 
 import java.net.MalformedURLException;
 import java.rmi.Naming;
@@ -7,8 +7,8 @@ import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.br.uni.financeiro.interfaceservico.IServicoAlunosPendentes;
-import com.br.uni.cobranca.principal.Aluno;
+import interfaceservico.IServicoAlunosPendentes;
+import principal.Aluno;
 
 public class Principal {
 	
@@ -21,10 +21,9 @@ public class Principal {
 			alunos = sap.listaAlunosComPendencias();
 			
 			for (Aluno aluno : alunos) {
-				System.out.println("Nome: "+aluno.getNome());
+				System.out.println(aluno);
 			}
 		} catch (MalformedURLException | RemoteException | NotBoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
